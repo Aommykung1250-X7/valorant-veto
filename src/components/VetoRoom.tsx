@@ -39,7 +39,7 @@ export default function VetoRoom() {
   // In that case we treat the draft as complete so the UI doesn't get stuck.
   const isDraftOver = roomState.isComplete || roomState.currentStep > VETO_SEQUENCE.length;
 
-  const isMyTurn = !isDraftOver && !!currentStepDef && currentStepDef.team === role && role !== 'spectator';
+  const isMyTurn = !isDraftOver && !!currentStepDef && currentStepDef.team === role;
   const currentAction = currentStepDef?.action ?? 'complete';
 
   // ── Action Handlers ────────────────────────────────────────
